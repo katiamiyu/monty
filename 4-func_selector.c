@@ -7,7 +7,6 @@
  */
 void (*select_function(char *s, unsigned int line))(stack_t **stack, unsigned int)
 {
-	(void)line;
 	instruction_t op[] = {{"push", push},
 		{"add", add},
 		{"pop", pop},
@@ -24,5 +23,6 @@ void (*select_function(char *s, unsigned int line))(stack_t **stack, unsigned in
 			return (op[i].f);
 		i++;
 	}
+	(void)line;
 	return (NULL);
 }

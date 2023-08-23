@@ -17,26 +17,26 @@ char **tokenizer(char *buffer)
 	token = strtok(dup, delim);
 	while (token)
 	{
-		numtoken++;
-		tok = strtok(NULL, delim);
+		num_token++;
+		token = strtok(NULL, delim);
 	}
-	if (numtoken == 0)
+	if (num_token == 0)
 	{
 		free(dup);
 		return (NULL);
 	}
-	tokens = malloc(sizeof(char *) * (numtoken + 1));
+	tokens = malloc(sizeof(char *) * (num_token + 1));
 	if (tokens == NULL)
 		return (NULL);
 
 	token = strtok(buffer, delim);
-	while (tok != NULL)
+	while (token != NULL)
 	{
 		tokens[i] = _strdup(token);
 		i++;
 		token = strtok(NULL, delim);
 	}
-	tokens[numtoken] = NULL;
+	tokens[num_token] = NULL;
 	free(dup);
 	return (tokens);
 }

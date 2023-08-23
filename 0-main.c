@@ -12,13 +12,13 @@ int main(int argc, char *argv[])
 	FILE *fd;
 	size_t count = 0;
 	stack_t *head = NULL;
-	char *buffer NULL, **tokens;
+	char *buffer = NULL, **tokens;
 	unsigned int line_count = 0, mode = 0;
 
 	check_arg_count(argc);
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
-		open_err(argv[1]);
+		open_error(argv[1]);
 	while (getline(&buffer, &count, fd) != -1)
 	{
 		line_count += 1;
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
 		if (!(select_function(tokens[0], line_count)))
 			error(buffer, tokens, line_count, head, fd);
 		if (mode && (!strcmp(tokens[0], "push")))
-			selected_function("queue", line_count)(&head, line_count);
+			select_function("queue", line_count)(&head, line_count);
 		else
-			selected_function(tokens[0], line_count)(&head, line_count);
+			select_function(tokens[0], line_count)(&head, line_count);
 		free_tokens(tokens);
 	}
 	fclose(fd);
@@ -64,10 +64,10 @@ void check_arg_count(int argc)
 	}
 }
 /**
- * open_err - error message when file fails to open.
+ * open_error - error message when file fails to open.
  * @str: name string.
  */
-void open_err(char *str)
+void open_error(char *str)
 {
 	fprintf(stderr, "Error: Can't open file %s\n", str);
 	exit(EXIT_FAILURE);
@@ -79,10 +79,9 @@ void open_err(char *str)
  */
 unsigned int validate_mode(char *str)
 {
-	if (!strcmp(str, "stack")
-			return (0);
+	if (!strcmp(str, "stack"))
+		return (0);
 	return (1);
-
 }
 /**
  * error - update stderr if error.
