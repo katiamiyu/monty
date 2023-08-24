@@ -37,10 +37,10 @@ unsigned int validate_mode(char *str)
  * @buff: program instruction.
  * @tokens: operation codes.
  * @line: number of occurence.
- * @head: list head.
+ * @h: list head.
  * @fd: open file pointer
  */
-void error(char *buff, char **tokens, unsigned int line, stack_t *head, FILE *fd)
+void error(char *buff, char **tokens, unsigned int line, stack_t *h, FILE *fd)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line, tokens[0]);
 	free(buff);
