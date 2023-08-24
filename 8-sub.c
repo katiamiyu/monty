@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
-  * sub - subtracts the top
+  * _sub - subtracts the top
   * @stack: working stack
   * @line_number: line number
   */
-void sub(stack_t **stack, unsigned int line_number)
+void _sub(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 

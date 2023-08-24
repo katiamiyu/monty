@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * add - Adds the top two elements
+ * _add - Adds the top two elements
  * @stack: Pointer to a stack
  * @line_number: line number
  */
-void add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0;
 
