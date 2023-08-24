@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
- * select_function - selects a function
- * @s: is instruction
- * @line: line number.
- * Return: a pointer corresponding to string
+ * select_func - Selects a function based on the given string and line number.
+ * @s: The string to be evaluated.
+ * @line: The line number.
+ *
+ * Return: A function pointer to the selected function.
  */
 void (*select_func(char *s, unsigned int line))(stack_t **stack, unsigned int)
 {
