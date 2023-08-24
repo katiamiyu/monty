@@ -10,14 +10,13 @@ void _push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 	int data;
-	char *argument;
 
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	argument = strtok(NULL, "\n"); /* Get argument after the push opcode */
+
 	if (argument == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
