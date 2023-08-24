@@ -2,12 +2,12 @@
 #include <ctype.h>
 
 /**
-* push - adds a new node
+* _push - adds a new node
 * @stack: stack object
 * @line_number: line number
 *
 */
-void push(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void _push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 	int data;

@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * swap - swaps the head
+ * _swap - swaps the head
  * @top: current head
  * @line_number: line
  */
-void swap(stack_t **top, unsigned int line_number)
+void _swap(stack_t **top, unsigned int line_number)
 {
 	stack_t *temp = *top;
 

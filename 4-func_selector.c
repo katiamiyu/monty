@@ -7,13 +7,13 @@
  */
 void (*select_function(char *s, unsigned int line))(stack_t **stack, unsigned int)
 {
-	instruction_t op[] = {{"push", push},
-		{"add", add},
-		{"pop", pop},
-		{"pall", pall},
-		{"sub", sub},
-		{"swap", swap},
-		{"pint", pint},
+	instruction_t op[] = {{"push", _push},
+		{"add", _add},
+		{"pop", _pop},
+		{"pall", _pall},
+		{"sub", _sub},
+		{"swap", _swap},
+		{"pint", _pint},
 		{NULL, NULL}};
 	int i = 0;
 

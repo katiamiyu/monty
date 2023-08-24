@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * pop - prints the first element
+ * _pop - prints the first element
  * @top: current head
  * @line_number: current line
  */
-void pop(stack_t **top, unsigned int line_number)
+void _pop(stack_t **top, unsigned int line_number)
 {
 	stack_t *temp = *top;
 
