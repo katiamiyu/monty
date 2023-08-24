@@ -36,7 +36,7 @@ typedef struct instruction_s {
 extern char *argument;
 
 char **tokenizer(char *buffer);
-void (*select_function(char *s, unsigned int))(stack_t **, unsigned int);
+void (*select_func(char *s, unsigned int))(stack_t **, unsigned int);
 char *_strdup(char *str);
 unsigned int validate_mode(char *str);
 void error(char *buf, char **tokens, unsigned int line, stack_t *h, FILE *fd);

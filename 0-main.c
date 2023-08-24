@@ -37,12 +37,12 @@ int main(int argc, char *argv[])
 			continue;
 		}
 		argument = tokens[1];
-		if (!(select_function(tokens[0], line_count)))
+		if (!(select_func(tokens[0], line_count)))
 			error(buffer, tokens, line_count, head, fd);
 		if (mode && (!strcmp(tokens[0], "push")))
-			select_function("queue", line_count)(&head, line_count);
+			select_func("queue", line_count)(&head, line_count);
 		else
-			select_function(tokens[0], line_count)(&head, line_count);
+			select_func(tokens[0], line_count)(&head, line_count);
 		free_tokens(tokens);
 	}
 	fclose(fd);

@@ -45,7 +45,7 @@ void error(char *buff, char **tokens, unsigned int line, stack_t *h, FILE *fd)
 	fprintf(stderr, "L%d: unknown instruction %s\n", line, tokens[0]);
 	free(buff);
 	free_tokens(tokens);
-	free_list(head);
+	free_list(h);
 	fclose(fd);
 	exit(EXIT_FAILURE);
 }

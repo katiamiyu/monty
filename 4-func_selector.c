@@ -5,7 +5,7 @@
  * @line: line number.
  * Return: a pointer corresponding to string
  */
-void (*select_function(char *s, unsigned int line))(stack_t **stack, unsigned int)
+void (*select_func(char *s, unsigned int line))(stack_t **stack, unsigned int)
 {
 	instruction_t op[] = {{"push", _push},
 		{"add", _add},
